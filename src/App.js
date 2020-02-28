@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
+import SQL from './pages/SQL';
 
 
 class App extends React.Component {
@@ -15,8 +16,8 @@ class App extends React.Component {
           
           <Switch>
             <Route exact path='/' component={LandingPage} />
-            {/* <Route exact path='/shop' component={Shop} />
-            <Route exact path='/admin' component={Admin} />
+            <Route exact path='/sql' component={SQL} />
+            {/* <Route exact path='/IDOR_URL' component={Admin} />
             <Route exact path='/admin/shop' component={ShopAdmin} />
             <Route exact path='/admin/testimonials' component={TestimonialsAdmin} />
             <Route component={NotFound} /> */}

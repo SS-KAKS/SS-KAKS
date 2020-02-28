@@ -3,7 +3,7 @@ import React from 'react';
 import Header from '../components/Header';
 
 
-class LandingPage extends React.Component {
+class SQL extends React.Component {
 
 
     render() {
@@ -11,9 +11,11 @@ class LandingPage extends React.Component {
             <React.Fragment style={{minHeight: window.innerHeight - 120}}>
 
                 <Header/>
-                <div style={{height: 200}}/>
+                <div style={{height: 200}}
+                   
+                />
 
-                <p>yo yo yo </p>
+                    <p>yo yo ya </p>
                 
                 {/* <Home/>
                 <div style={{height: 250}}/>
@@ -29,4 +31,4 @@ class LandingPage extends React.Component {
     }
 }
   
-export default LandingPage;
+export default SQL;
