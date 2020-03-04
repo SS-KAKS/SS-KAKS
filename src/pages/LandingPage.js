@@ -15,15 +15,7 @@ class LandingPage extends React.Component {
 
                 <p>yo yo yo </p>
                 
-                {/* <Home/>
-                <div style={{height: 250}}/>
-                <Media/>    
-                <div style={{height: 250}}/>
-                <Testimonials/>
-                <div style={{height: 250}}/>
-                <ContactUs/>
-                <div style={{height: 175}}/>
-                <Footer/> */}
+
             </React.Fragment>
         )
     }

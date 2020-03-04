@@ -1,30 +1,30 @@
-import React, { Component } from "react";
-import Header from './Header';
+import React from "react";
+import Header from '../components/Header';
 
-export default class SignUp extends Component {
+export default class SignUp extends React.Component {
     render() {
         return (
             <React.Fragment style={{minHeight: window.innerHeight - 120}}> 
             <Header/>
-            <form>
+            <form style={{margin: "10%", lineHeight: "2rem"}}>
                 <h3>Sign Up</h3>
 
-                <div className="form-group">
+                <div className="form-group" style={{marginBottom: "2rem"}}>
                     <label>First name</label>
                     <input type="text" className="form-control" placeholder="First name" />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group" style={{marginBottom: "2rem"}}>
                     <label>Last name</label>
                     <input type="text" className="form-control" placeholder="Last name" />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group" style={{marginBottom: "2rem"}}>
                     <label>Email address</label>
                     <input type="email" className="form-control" placeholder="Enter email" />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group" style={{marginBottom: "2rem"}}>
                     <label>Password</label>
                     <input type="password" className="form-control" placeholder="Enter password" />
                 </div>

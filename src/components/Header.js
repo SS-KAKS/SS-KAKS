@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
+import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
 
 
 
@@ -18,7 +18,7 @@ class Header extends React.Component {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                         {/* <Nav.Link href="#home">Home</Nav.Link> */}
-                        <Nav.Link href="/sql">SQL Injection</Nav.Link>
+                        <Nav.Link href="sql">SQL Injection</Nav.Link>
                         <Nav.Link href="#link">IDOR/URL</Nav.Link>
                         <Nav.Link href="#link">CSRF</Nav.Link>
                         <Nav.Link href="#link">XSS</Nav.Link>
@@ -38,7 +38,7 @@ class Header extends React.Component {
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                         <Button variant="outline-success">Search</Button>
                         </Form>
-                        <Nav>
+                        <Nav style={{marginLeft: "20px"}}>
                         <Nav.Link href="login">Log-In</Nav.Link>
                         <Nav.Link href="signup">Sign-Up</Nav.Link>
                         </Nav>
