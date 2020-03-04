@@ -6,8 +6,9 @@ export default class SignUp extends React.Component {
         return (
             <React.Fragment style={{minHeight: window.innerHeight - 120}}> 
             <Header/>
-            <form style={{margin: "10%", lineHeight: "2rem"}}>
-                <h3>Sign Up</h3>
+            <form style={{margin: "7%", lineHeight: "2rem"}}>
+
+                <h3  style={{marginBottom: "50px"}}>Sign Up</h3>
 
                 <div className="form-group" style={{marginBottom: "2rem"}}>
                     <label>First name</label>
@@ -29,9 +30,9 @@ export default class SignUp extends React.Component {
                     <input type="password" className="form-control" placeholder="Enter password" />
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
-                <p className="forgot-password text-right">
-                    Already registered <a href="/login">sign in?</a>
+                <button type="submit" className="btn btn-primary" style={{marginBottom: "40px"}}>Sign Up</button>
+                <p className="forgot-password text-left">
+                    Already registered <a href="login">sign in?</a>
                 </p>
             </form>
             </React.Fragment>

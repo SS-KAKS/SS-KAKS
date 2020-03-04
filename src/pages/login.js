@@ -7,9 +7,9 @@ export default class Login extends React.Component {
             <React.Fragment style={{minHeight: window.innerHeight - 120}}> 
             <Header/>
            
-            <form style={{margin: "10%", lineHeight: "2rem"}}>
+            <form style={{margin: "7%", lineHeight: "2rem"}}>
             
-                <h3>Sign In</h3>
+                <h3 style={{marginBottom: "50px"}} >Sign In</h3>
 
                 <div className="form-group" style={{marginBottom: "2rem"}}>
                     <label>Email address</label>
@@ -28,9 +28,9 @@ export default class Login extends React.Component {
                     </div>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block">Submit</button>
-                <p className="forgot-password text-right">
-                    Forgot <a href="ForgotPass">password?</a>
+                <button type="submit" className="btn btn-primary" style={{marginBottom: "40px"}}>Submit</button>
+                <p className="forgot-password text-left">
+                    Forgot <a  href="ForgotPass">password?</a>
                 </p>
             </form>
              </React.Fragment>

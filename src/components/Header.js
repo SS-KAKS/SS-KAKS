@@ -34,11 +34,11 @@ class Header extends React.Component {
                         </NavDropdown> */}
                         </Nav>
                        
-                        <Form inline>
+                        {/* <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                         <Button variant="outline-success">Search</Button>
-                        </Form>
-                        <Nav style={{marginLeft: "20px"}}>
+                        </Form> */}
+                        <Nav style={{marginRight: "30px"}}>
                         <Nav.Link href="login">Log-In</Nav.Link>
                         <Nav.Link href="signup">Sign-Up</Nav.Link>
                         </Nav>
