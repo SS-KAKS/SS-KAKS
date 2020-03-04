@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import SQL from './pages/SQL';
+//var session = require('express-session');
 
 
 class App extends React.Component {
