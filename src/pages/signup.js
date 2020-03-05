@@ -30,10 +30,20 @@ export default class SignUp extends React.Component {
                     <input type="password" className="form-control" placeholder="Enter password" />
                 </div>
 
-                <button type="submit" className="btn btn-primary" style={{marginBottom: "40px"}}>Sign Up</button>
-                <p className="forgot-password text-left">
-                    Already registered <a href="login">sign in?</a>
-                </p>
+                <div class="row" style={{marginTop: "50px"}}>
+
+                    <div div style={{width:"50%"}}>
+                        <button type="submit" className="btn btn-primary" style={{fontSize: "20px", marginLeft: "12px"}}>Sign Up</button>
+                    </div>
+
+                    <div className="forgot-password text-right" style={{width:"50%"}}>
+                        Already registered <a href="login">sign in?</a>
+                    </div>
+                    
+                </div>
+
+                
+
             </form>
             </React.Fragment>
         );

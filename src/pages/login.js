@@ -28,10 +28,18 @@ export default class Login extends React.Component {
                     </div>
                 </div>
 
-                <button type="submit" className="btn btn-primary" style={{marginBottom: "40px"}}>Submit</button>
-                <p className="forgot-password text-left">
-                    Forgot <a  href="ForgotPass">password?</a>
-                </p>
+                <div class="row" style={{marginTop: "50px"}}>
+
+                    <div style={{width:"50%"}}>
+                        <button type="submit" className="btn btn-primary" style={{fontSize: "20px", marginLeft: "12px"}}>Log In</button>
+                    </div>
+
+                    <div className="forgot-password text-right" style={{width:"50%"}}>
+                        <t> Forgot <a  href="ForgotPass">password?</a> </t>
+                    </div>
+                    
+                </div>
+                
             </form>
              </React.Fragment>
            
