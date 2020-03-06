@@ -20,12 +20,12 @@ class LandingPage extends React.Component {
 
                 
                 
-                <div style={{textAlign: "center"}}>
+                {/* <div style={{textAlign: "center"}}>
                     <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                         <Button variant="outline-success">Search</Button>
                     </Form>
-                </div>
+                </div> */}
                 
 
             </React.Fragment>
