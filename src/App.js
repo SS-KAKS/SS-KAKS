@@ -1,9 +1,9 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import SQL from './pages/SQL';
-//var session = require('express-session');
-
+import Login from "./pages/login";
+import SignUp from "./pages/signup";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 class App extends React.Component {
   componentWillMount(){
@@ -17,13 +17,20 @@ class App extends React.Component {
           
           <Switch>
             <Route exact path='/' component={LandingPage} />
+            <Route exact path ='/login' component = {Login}/>
             <Route exact path='/sql' component={SQL} />
+            <Route exact path ='/signup' component = {SignUp}/>
+            
+      
             {/* <Route exact path='/IDOR_URL' component={Admin} />
             <Route exact path='/admin/shop' component={ShopAdmin} />
             <Route exact path='/admin/testimonials' component={TestimonialsAdmin} />
             <Route component={NotFound} /> */}
-          </Switch>
+       
+          </Switch>  
         </Router>
+        
+        
       
     )
   }

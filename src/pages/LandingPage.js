@@ -27,15 +27,7 @@ class LandingPage extends React.Component {
                     </Form>
                 </div>
                 
-                {/* <Home/>
-                <div style={{height: 250}}/>
-                <Media/>    
-                <div style={{height: 250}}/>
-                <Testimonials/>
-                <div style={{height: 250}}/>
-                <ContactUs/>
-                <div style={{height: 175}}/>
-                <Footer/> */}
+
             </React.Fragment>
         )
     }
