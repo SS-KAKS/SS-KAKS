@@ -11,17 +11,17 @@ export default class SignUp extends React.Component {
                 <h3  style={{marginBottom: "50px"}}>Sign Up</h3>
 
                 <div className="form-group" style={{marginBottom: "2rem"}}>
-                    <label>First name</label>
+                    <label>First Name</label>
                     <input type="text" className="form-control" placeholder="First name" />
                 </div>
 
                 <div className="form-group" style={{marginBottom: "2rem"}}>
-                    <label>Last name</label>
+                    <label>Last Name</label>
                     <input type="text" className="form-control" placeholder="Last name" />
                 </div>
 
                 <div className="form-group" style={{marginBottom: "2rem"}}>
-                    <label>Email address</label>
+                    <label>Email Address</label>
                     <input type="email" className="form-control" placeholder="Enter email" />
                 </div>
 
