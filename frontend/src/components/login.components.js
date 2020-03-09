@@ -1,0 +1,114 @@
+import React, { Component } from "react";
+import Header from './Header';
+import userSpace from "./userSpace";
+import SubmitButton from "./SubmitButton";
+import InputField from './InputField';
+export default class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { username: '', password: '', buttonDisabled: false }
+
+    }
+
+    setInputValue(property, val) {
+        val = val.trim();
+        if (val.length > 12) {
+            return;
+        }
+        this.setState({ [property]: val })
+    }
+    resetForm() {
+        this.setState({
+            username: '',
+            password: '',
+            buttonDisabled: false
+        })
+    }
+    async doLogin() {
+        if (!this.state.username) {
+            return;
+        }
+        if (!this.state.password) {
+            return;
+        }
+        this.setState({
+            buttonDisabled: true
+        })
+
+        try {
+            let res = await fetch('/login', {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: this.state.username,
+                    password: this.state.password
+                })
+
+            });
+
+            let result = await res.json();
+            if (result && result.success) {
+                userSpace.isLoggedIn = true;
+                userSpace.username = result.username;
+            }
+            else if (result && result.success == false) {
+                this.resetForm();
+                alert(result.msg);
+            }
+
+
+        } catch (e) {
+            console.log(e);
+            this.resetForm();
+        }
+
+    }
+
+    render() {
+        return (
+            <React.Fragment style={{ minHeight: window.innerHeight - 120 }}>
+                <Header />
+
+                <div className="loginForm">
+
+                    <h3>Sign In</h3>
+
+
+                    <InputField type='text'
+                        placeholder='Username'
+                        value={this.state.username ? this.state.username : ''}
+                        onChange={(val) => this.setInputValue('username', val)}
+
+                    />
+                    <InputField 
+                    type='text'
+                        placeholder='Password'
+                        value={this.state.password ? this.state.password : ''}
+                        onChange={(val) => this.setInputValue('password', val)}
+
+                    /> 
+         <button type="submit" className='submitButton'
+           disabled={this.props.disabled}
+          disabled={this.state.buttonDisabled}
+          onClick={() => this.props.onClick()}
+          onClick={() => this.doLogin()}>Sign Up</button>
+  {this.props.text}
+                   
+                    <SubmitButton
+                        text='Login'
+                        disabled={this.state.buttonDisabled}
+                        onClick={() => this.doLogin()}
+                    />
+
+
+
+                </div>
+
+            </React.Fragment>
+
+        );
+    }
+}
