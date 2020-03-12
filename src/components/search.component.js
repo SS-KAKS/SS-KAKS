@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import Header from '../components/Header';
 
 const Songs = props => (
   <tr>
@@ -58,7 +59,9 @@ list() {
 
 render() {
   return (
+    
     <div>
+      <Header />
       <h1>Music Store</h1>
       <form onSubmit={this.onSubmit}>
         <div className="form-group">

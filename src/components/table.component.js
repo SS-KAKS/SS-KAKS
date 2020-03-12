@@ -67,9 +67,11 @@ render() {
             value={this.state.search}
             onChange={this.onChangeSearch}
             />
+            
+            <input type="submit" value="Search" className="btn btn-primary" style={{marginLeft: "10px"}} />
         </div>
         <div className="form-group">
-          <input type="submit" value="Search" className="btn btn-primary" />
+          
         </div>
       </form>
       <table className="table">
