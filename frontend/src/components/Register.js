@@ -36,6 +36,7 @@ class signup extends Component {
   }
 
   render() {
+    console.log(this.state.first_name);
     return (
         <React.Fragment style={{minHeight: window.innerHeight - 120}}> 
         <Header/>

@@ -9,7 +9,7 @@ users.use(cors())
 
 process.env.SECRET_KEY = 'secret'
 
-users.post('/register', (req, res) => {
+users.post('/signup', (req, res) => {
   const today = new Date()
   const userData = {
     first_name: req.body.first_name,
@@ -40,6 +40,7 @@ users.post('/register', (req, res) => {
     })
     .catch(err => {
       res.send('error: ' + err)
+      console.log("ERROR ????");
     })
 })
 
