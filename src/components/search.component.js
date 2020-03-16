@@ -25,7 +25,7 @@ export default class Search extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/tables/get/' + this.props.match.params.search)
+    axios.get('http://localhost:3000/tables/get/' + this.props.match.params.search)
       .then(response => {
         this.setState({music: response.data})
         console.log(this.state.music)
@@ -60,22 +60,24 @@ list() {
 render() {
   return (
     
-    <div>
+    <div style={{textAlign: "Center"}}>
       <Header />
+      <br></br>
       <h1>Music Store</h1>
       <form onSubmit={this.onSubmit}>
-        <div className="form-group">
-          <h4>Search track</h4>
-          <input type="text"
+        <div className="form-group" >
+
+          <br></br>
+          <input type="text" placeholder="Search" 
             value={this.state.search}
             onChange={this.onChangeSearch}
             />
+            <input type="submit" value="Search" className="btn btn-primary" style={{marginLeft: "1%"}}/>
         </div>
-        <div className="form-group">
-          <input type="submit" value="Search" className="btn btn-primary" />
-        </div>
+
       </form>
-      <table className="table">
+      <br></br>
+      <table className="table" style={{width: "90%", marginLeft: "5%"}}>
         <thead className="thead-dark">
           <tr>
             <th>Id</th>

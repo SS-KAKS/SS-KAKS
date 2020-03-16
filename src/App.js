@@ -3,7 +3,8 @@ import LandingPage from './pages/LandingPage';
 import SQL from './pages/SQL';
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
-import Search from "./components/search.component"
+import Search from "./components/search.component";
+import CSRF from "./pages/CSRF";
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 class App extends React.Component {
@@ -19,6 +20,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' component={LandingPage} />
             <Route exact path ='/login' component = {Login}/>
+            <Route exact path ='/csrf' component = {CSRF}/>
             <Route exact path='/sql' component={SQL} />
             <Route exact path='/sql/:search' component={Search}/>
             <Route exact path ='/signup' component = {SignUp}/>
