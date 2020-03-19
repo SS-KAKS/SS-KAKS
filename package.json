@@ -52,7 +52,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "concurrently \"nodemon server/server.js\" \"npm run-script start\"  \"(cd src && cd mongoDBConnection ) & npm  start\""
+    "dev": "concurrently \"nodemon server/server.js\" \"npm run-script start\"  \"cd src/mongoDBConnection && npm start\""
   },
   "eslintConfig": {
     "extends": "react-app"
