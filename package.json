@@ -60,7 +60,7 @@
     "all": "npm-run-all --parallel  reactStr serverStart dev ",
     "dev": "concurrently \"nodemon server/server.js\" \"npm run-script start\" "
   },
-  
+  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": "react-app"
   },
