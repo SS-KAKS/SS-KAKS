@@ -19,12 +19,13 @@ class CSRF extends React.Component {
     let token = this.refs.csrf.value;
     console.log(token);
     if (token === "admin") {
-      alert("Congrats");
-      window.location = '/sql';
+      alert("Congrats, now try the ");
+      window.location = '/csrf';
     }
     else {
       console.log(token);
-      alert("Try Again Hacker!");
+      alert("Not Admin!");
+      window.location = '/csrf';
       //window.location = '/sql/' + this.state.search;
     }
   }
@@ -46,7 +47,7 @@ class CSRF extends React.Component {
               <p>Only admins can update this info...</p>
 
               
-              <form method="GET" onSubmit={this.onSubmit}>
+              <form method="POST" onSubmit={this.onSubmit}>
 
                 New Username:
                 <br/>
