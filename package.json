@@ -45,15 +45,20 @@
     "semantic-ui-react": "^0.88.2",
     "sqlite3": "^4.1.1",
     "webextensions": "0.0.0",
-    "webpack": "^4.41.2"
+    "webpack": "^4.41.2",
+    "npm-run-all": "^4.1.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm run all",
+    "reactStr": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "serverStart": "cd src/mongoDBConnection && npm start",
     "eject": "react-scripts eject",
-    "dev": "concurrently \"nodemon server/server.js\" \"npm run-script start\"  \"cd src/mongoDBConnection && npm start\""
+    "all": "npm-run-all --parallel  reactStr serverStart dev ",
+    "dev": "concurrently \"nodemon server/server.js\" \"npm run-script start\" "
   },
+  "proxy": "http://localhost:5001",
   "eslintConfig": {
     "extends": "react-app"
   },
