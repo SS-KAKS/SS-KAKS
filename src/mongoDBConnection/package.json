@@ -4,15 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "npm run all",
-    "dev": "npm run all",
-    "startPage":"cd frontend && npm start",
-    "serverStart":"node server.js",
-  
-    "all": "npm-run-all --parallel  startPage serverStart "
+    "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",

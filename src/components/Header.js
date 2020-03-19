@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Navbar, Nav} from 'react-bootstrap';
+import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
 
 
 
@@ -40,7 +40,7 @@ class Header extends React.Component {
                         </Form> */}
                         <Nav style={{marginRight: "30px"}}>
                         <Nav.Link href="login">Log-In</Nav.Link>
-                        <Nav.Link href="signup">Sign-Up</Nav.Link>
+                        <Nav.Link href="register">Sign-Up</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                     </Navbar>
