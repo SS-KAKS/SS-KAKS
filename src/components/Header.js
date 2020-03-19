@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap';
+import {Navbar, Nav} from 'react-bootstrap';
 
 
 
@@ -39,8 +39,8 @@ class Header extends React.Component {
                         <Button variant="outline-success">Search</Button>
                         </Form> */}
                         <Nav style={{marginRight: "30px"}}>
-                        <Nav.Link href="login">Log-In</Nav.Link>
-                        <Nav.Link href="register">Sign-Up</Nav.Link>
+                        <Nav.Link href="login">Login</Nav.Link>
+                        <Nav.Link href="register">Sign Up</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                     </Navbar>
