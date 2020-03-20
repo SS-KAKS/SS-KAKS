@@ -15,9 +15,19 @@ class LandingPage extends React.Component {
                 <div style={{ height: "75vh" }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align">
+            <br></br>
+            <br></br>
             <h4>
-              Welcome ! 
+              You must login to access site! 
             </h4>
+            <br></br>
+              <p className="grey-text text-darken-1">
+                Already have an account? <Link to="/login">Log in</Link>
+              </p>
+              <br></br>
+              <p className="grey-text text-darken-1">
+                Don't have an account? <Link to="/register">Register</Link>
+              </p>
             
             <br />
          
