@@ -44,6 +44,9 @@ this.props.registerUser(newUser, this.props.history);
 render() {
     const { errors } = this.state;
 return (
+  <React.Fragment style={{minHeight: window.innerHeight - 120}}>
+  <Header/>
+            
       <div className="container">
         <div className="row">
           <div className="col s8 offset-s2">
@@ -134,6 +137,7 @@ return (
           </div>
         </div>
       </div>
+      </React.Fragment>
     );
   }
 }
