@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from  "../../actions/authActions";
-import Header from '../Header';
 class Dashboard extends Component {
   onLogoutClick = e => {
     e.preventDefault();
@@ -11,8 +10,6 @@ class Dashboard extends Component {
 render() {
     const { user } = this.props.auth;
 return (
-  <React.Fragment style={{minHeight: window.innerHeight - 120}}>
-  <Header/>
       <div style={{ height: "75vh" }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align">
@@ -38,7 +35,6 @@ return (
           </div>
         </div>
       </div>
-      </React.Fragment>
     );
   }
 }

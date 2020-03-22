@@ -25,7 +25,7 @@ export default class Table extends Component {
   }
 
   componentDidMount() {
-    axios.get(ip.address()+':5000/tables/get')
+    axios.get('http://localhost:5000/tables/get')
       .then(response => {
         this.setState({music: response.data})
         //console.log(this.state.music)

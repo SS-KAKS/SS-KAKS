@@ -1,9 +1,5 @@
 runtime: nodejs
 env: flex
-handlers:
-  - url: /
-    static_files: build/index.html
-    upload: build/index.html
-  - url: /(.*)$
-    static_files: build/\1
-    upload: build/(.*)
+network:
+  forwarded_ports:
+    - 3000/tcp
