@@ -25,7 +25,7 @@ export default class Search extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://ss-kaks-server.appspot.com:5000/tables/get/' + this.props.match.params.search)
+    axios.get('http://localhost:5000/tables/get/' + this.props.match.params.search)
       .then(response => {
         this.setState({music: response.data})
         console.log(this.state.music)

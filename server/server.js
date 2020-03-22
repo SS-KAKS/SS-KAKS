@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(cors({
-    origin: 'https://ss-kaks-server.appspot.com:3000'
+    origin: 'http://localhost:3000'
 }))
 
 app.use('/tables', routing);

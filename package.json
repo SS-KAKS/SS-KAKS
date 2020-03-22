@@ -63,7 +63,7 @@
     "run-scriptStart": "npm run-script start",
     "all": "npm-run-all --parallel   reactStr serverStart  nodemonRnner "
   },
-  "proxy":"https://ss-kaks-server.appspot.com:5080",
+  "proxy":"http://localhost:5080",
   "eslintConfig": {
     "extends": "react-app"
   },
