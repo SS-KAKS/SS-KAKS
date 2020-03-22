@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-
+var ip = require("ip");
 const Music = props => (
   <tr>
     <td>{props.music.id}</td>
@@ -25,7 +25,7 @@ export default class Table extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/tables/get')
+    axios.get(ip.address()+':5000/tables/get')
       .then(response => {
         this.setState({music: response.data})
         //console.log(this.state.music)

@@ -21,6 +21,7 @@
     "express": "^4.17.1",
     "express-validator": "^6.4.0",
     "http-proxy-middleware": "^1.0.3",
+    "ip": "^1.1.5",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
@@ -52,8 +53,7 @@
     "webpack": "^4.41.2"
   },
   "scripts": {
-    "start": "serve -s build & npm run all",
-  "prestart": "npm install -g serve",
+    "start": "  npm run dev & npm install ip",
     "reactStr": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -61,9 +61,9 @@
     "eject": "react-scripts eject",
     "nodemonRnner": "nodemon   server/server.js",
     "run-scriptStart": "npm run-script start",
-    "all": "npm-run-all --parallel   reactStr serverStart  nodemonRnner "
+    "dev": "npm-run-all --parallel   reactStr serverStart  nodemonRnner"
   },
-  "proxy":"http://localhost:5080",
+  "proxy": "http://localhost:5080",
   "eslintConfig": {
     "extends": "react-app"
   },

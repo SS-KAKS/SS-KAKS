@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import Header from '../components/Header';
-
+var ip = require("ip");
 const Songs = props => (
   <tr>
     <td>{props.music.id}</td>
@@ -25,7 +25,7 @@ export default class Search extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/tables/get/' + this.props.match.params.search)
+    axios.get(ip.address()+':5000/tables/get/' + this.props.match.params.search)
       .then(response => {
         this.setState({music: response.data})
         console.log(this.state.music)

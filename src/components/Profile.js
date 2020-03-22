@@ -14,12 +14,19 @@ class Profile extends Component {
 
   componentDidMount() {
     const token = localStorage.usertoken
+    try{
+      const decoded = jwt_decode(token)
+    }catch(error){
+      console.log('invalid token format', error);
+      return true;
+    }
     const decoded = jwt_decode(token)
     this.setState({
       first_name: decoded.first_name,
       last_name: decoded.last_name,
       email: decoded.email
     })
+ 
   }
 
   render() {
