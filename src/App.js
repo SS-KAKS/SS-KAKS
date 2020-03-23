@@ -15,6 +15,7 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+import Secure_CSRF from "./pages/Secure_CSRF";
 
 
 // Check for token to keep user logged in
@@ -48,6 +49,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' component={LandingPage} />
             <Route exact path ='/csrf' component = {CSRF}/>
+            <Route exact path ='/secure_csrf' component = {Secure_CSRF}/>
             <Route exact path='/sql' component={SQL} />
             <Route exact path='/sql/:search' component={Search}/>
             <Route exact path="/login" component={Login} />

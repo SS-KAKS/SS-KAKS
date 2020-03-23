@@ -1,10 +1,11 @@
 import React from 'react';
 import Header from '../components/Header';
+import { connect } from "react-redux";
 import { BrowserRouter as Router} from "react-router-dom";
+import objectHash from "object-hash";
 
 
-
-class CSRF extends React.Component {
+class Secure_CSRF extends React.Component {
 
   constructor(props) {
     super(props);
@@ -15,27 +16,27 @@ class CSRF extends React.Component {
   }
 
   onSubmit(i) {
+    const { user } = this.props.auth;
+    
+    console.log(this.props.auth.user.id);
     i.preventDefault();
     let token = this.refs.csrf.value;
-    console.log(token);
-    if (token === "admin") {
-      alert("Congrats, now try the secure challenge");
-      window.location = '/csrf';
+    if (token === this.props.auth.user.id) {
+      alert("Successfully authorized");
+      window.location = '/secure_csrf';
     }
     else {
-      console.log(token);
-      alert("Not Admin!");
-      window.location = '/csrf';
-      //window.location = '/sql/' + this.state.search;
+      console.log(user.name);
+      alert("Not Logged in!");
+      window.location = '/login';
     }
   }
-
-    
-
 
 
 
     render() {
+      const { user } = this.props.auth;
+      
         return (
           <Router>
             <Header />
@@ -44,7 +45,7 @@ class CSRF extends React.Component {
             <div id="main-content"  style={{textAlign: "center"}}>
               <h1>CSRF</h1>
 
-              <p>Only admins can update this info...</p>
+              <p>Only logged in users can update this info...</p>
 
               
               <form method="POST" onSubmit={this.onSubmit}>
@@ -56,7 +57,7 @@ class CSRF extends React.Component {
                 <br/>
                 New Password:<br/>
                 <input type="text" name="lastname" />
-                <input ref = "csrf" name="csrf_token" type="hidden" value="user" />
+                <input ref = "csrf" name="csrf_token" type="hidden" value={this.props.auth.user.id} />
                 <br/>
                 <br></br>
                 <input type="submit" value="Update"/>
@@ -68,9 +69,16 @@ class CSRF extends React.Component {
             
           </Router>
         )
+      
     }
 }
-
-export default CSRF;
+const mapStateToProps = state => ({
+  auth: state.auth,
+  name: state.name
+}
+);
+export default connect(
+  mapStateToProps
+)(Secure_CSRF);
 
 
