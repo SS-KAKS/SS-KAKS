@@ -63,7 +63,7 @@
     "run-scriptStart": "npm run-script start",
     "dev": "npm-run-all --parallel   reactStr serverStart  nodemonRnner"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:5080",
   "eslintConfig": {
     "extends": "react-app"
   },
