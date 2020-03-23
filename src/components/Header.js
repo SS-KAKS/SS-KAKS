@@ -2,9 +2,7 @@ import React from 'react';
 
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import { logoutUser } from  "../actions/authActions";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import {Navbar, Nav} from 'react-bootstrap';
 import { Link, withRouter } from 'react-router-dom'
  
 class Header extends React.Component {
