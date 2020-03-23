@@ -124,7 +124,7 @@ class Header extends React.Component {
               style={{
                 borderRadius: "3px",
                 letterSpacing: "1.5px",
-                marginLeft: "1rem",
+                //marginLeft: "1rem",
                 color: 'white'
               } }
               onClick={this.onLogoutClick}
