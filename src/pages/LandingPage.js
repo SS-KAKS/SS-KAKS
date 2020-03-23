@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Header from '../components/Header';
 
@@ -37,7 +36,7 @@ class LandingPage extends React.Component {
       
           </div>
         </div>
-      </div>>
+      </div>
                 
 
             </React.Fragment>
@@ -53,7 +52,8 @@ class LandingPage extends React.Component {
           <br></br>
           <br></br>
           <h4>
-            Welcome to the home page  {user.name}, feel free to look around and try to exploit this page.
+            Welcome to the home page  
+            <t style={{fontWeight: "Bold"}}> {user.name}</t>, feel free to look around and try to exploit this page.
           </h4>
           <br></br>
           <br />
@@ -61,7 +61,7 @@ class LandingPage extends React.Component {
     
         </div>
       </div>
-    </div>>
+    </div>
               
 
           </React.Fragment>

@@ -51,38 +51,28 @@ class Header extends React.Component {
                             <Nav className="mr-auto">
                         
     
-                            {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">SQL Injection</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">IDOR/URL</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">CSRF</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">XSS</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                            </NavDropdown> */}
+
                             </Nav>
                            
-                            {/* <Form inline>
-                            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                            <Button variant="outline-success">Search</Button>
-                            </Form> */}
+
                             <nav>
-                             <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link to="/login" className="nav-link">
-                Login
-              </Link>
-            </li>
-          </ul>
-          </nav>
-          <nav>
-                             <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link to="/register" className="nav-link">
-                Signup
-              </Link>
-            </li>
-          </ul>
-          </nav>
+                                                <ul className="navbar-nav">
+                                <li className="nav-item">
+                                <Link to="/login" className="nav-link">
+                                    Login
+                                </Link>
+                                </li>
+                            </ul>
+                            </nav>
+                            <nav>
+                                                <ul className="navbar-nav">
+                                <li className="nav-item">
+                                <Link to="/register" className="nav-link">
+                                    Signup
+                                </Link>
+                                </li>
+                            </ul>
+                            </nav>
                 
                         
                         </Navbar.Collapse>
@@ -107,28 +97,17 @@ class Header extends React.Component {
                         <Nav.Link href="#link">XSS</Nav.Link>
                        
 
-                        {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">SQL Injection</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">IDOR/URL</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">CSRF</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">XSS</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                        </NavDropdown> */}
+
                         </Nav>
                        
-                        {/* <Form inline>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                        <Button variant="outline-success">Search</Button>
-                        </Form> */}
+
                      
-                       <h2 style={ myColor }>  {user.name} ,   </h2>
+                       {/* <h2 style={ myColor }>  {user.name}   </h2> */}
              <button
               style={{
-                width: "150px",
                 borderRadius: "3px",
                 letterSpacing: "1.5px",
-                marginTop: "1rem",
+                marginLeft: "1rem",
                 color: 'white'
               } }
               onClick={this.onLogoutClick}

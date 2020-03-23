@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import Header from '../components/Header';
-var ip = require("ip");
 const Songs = props => (
   <tr>
     <td>{props.music.id}</td>
