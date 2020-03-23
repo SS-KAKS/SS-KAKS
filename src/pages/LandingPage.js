@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import Header from '../components/Header';
 
 
@@ -8,6 +9,8 @@ class LandingPage extends React.Component {
 
 
     render() {
+      const { user } = this.props.auth;
+      if(user.name===undefined){
         return (
             <React.Fragment style={{minHeight: window.innerHeight - 120}}>
 
@@ -39,7 +42,39 @@ class LandingPage extends React.Component {
 
             </React.Fragment>
         )
+      }else{
+        return (
+          <React.Fragment style={{minHeight: window.innerHeight - 120}}>
+
+              <Header/>
+              <div style={{ height: "75vh" }} className="container valign-wrapper">
+      <div className="row">
+        <div className="col s12 center-align">
+          <br></br>
+          <br></br>
+          <h4>
+            Welcome to the home page  {user.name}, feel free to look around and try to exploit this page.
+          </h4>
+          <br></br>
+          <br />
+       
+    
+        </div>
+      </div>
+    </div>>
+              
+
+          </React.Fragment>
+      )
+      }
     }
 }
+const mapStateToProps = state => ({
+  auth: state.auth,
+  name: state.name
+}
+);
+export default connect(
+  mapStateToProps
+)(LandingPage);
   
-export default LandingPage;

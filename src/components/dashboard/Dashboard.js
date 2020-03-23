@@ -2,22 +2,32 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from  "../../actions/authActions";
+import Header from '../Header';
 class Dashboard extends Component {
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
   };
+ 
+
 render() {
     const { user } = this.props.auth;
+    
 return (
+  <React.Fragment style={{minHeight: window.innerHeight - 120}}>
+  
+    <Header name = {user.name.split(" ")[0]}  />
+              
       <div style={{ height: "75vh" }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align">
             <h4>
               <b>Hey there,</b> {user.name.split(" ")[0]}
               <p className="flow-text grey-text text-darken-1">
-                You are logged into the KAKS website { this.props.name}
-                <span style={{ fontFamily: "monospace" }}>MERN</span> 
+                Please look around, and try different attacks, Mr/Mrs/Ms { user.name.split(" ")[0] }.
+                 
+              
+            
               </p>
             </h4>
             <button
@@ -35,7 +45,9 @@ return (
           </div>
         </div>
       </div>
+      </React.Fragment>
     );
+  
   }
 }
 Dashboard.propTypes = {
