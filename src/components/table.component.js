@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-
+var ip = require("ip");
 const Music = props => (
   <tr>
     <td>{props.music.id}</td>

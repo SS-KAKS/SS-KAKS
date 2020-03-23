@@ -10,7 +10,7 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
-  }
+  } 
 }
 
 .App-header {
@@ -35,4 +35,90 @@
   to {
     transform: rotate(360deg);
   }
+}
+body, html, #root, .app, .container {
+  width: 100%;
+  height: 100%;
+}
+
+
+.container {
+  font-size: 28px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #282c34;
+}
+
+.loginForm {
+ box-sizing: border-box;
+ width: 100%;
+ max-width: 400px;
+ padding-left: 20px;
+ padding-right: 20px;
+}
+
+.inputField {
+ padding-top: 16px;
+}
+
+.input {
+ box-sizing: border-box;
+ outline: none;
+ border: solid 2px #1189de;
+ border-radius: 4px;
+ color: #292929;
+ width: 100%;
+ padding: 12px;
+ font-size: 14px;
+ background: rgba(255, 255, 255, 1);
+}
+
+.submitButton {
+ padding-top: 16px;
+}
+
+
+.btn {
+ width: 100%;
+ min-width: 280px;
+ color: #565656;
+ padding: 12px;
+ font-size: 14px;
+ font-weight: bold;
+ border: solid 2px #1189de;
+ border-radius: 4px;
+ background: #fff;
+ cursor: pointer;
+}
+.login-form {
+  width: 300px;
+  margin: 0 auto;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+.login-form h1 {
+  text-align: center;
+  color: #4d4d4d;
+  font-size: 24px;
+  padding: 20px 0 20px 0;
+}
+.login-form input[type="password"],
+.login-form input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #dddddd;
+  margin-bottom: 15px;
+  box-sizing:border-box;
+}
+.login-form input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background-color: #535b63;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
 }
