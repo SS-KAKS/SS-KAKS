@@ -9,11 +9,7 @@ var ip = require("ip");
 app.use(bodyParser.json());
 
 app.use(cors({
-<<<<<<< HEAD
-    origin: ip.address()+':3000'
-=======
     origin: 'http://localhost:3000'
->>>>>>> parent of 1a741cd5... Deployable
 }))
 
 app.use('/tables', routing);

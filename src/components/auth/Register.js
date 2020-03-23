@@ -46,98 +46,115 @@ render() {
     const { errors } = this.state;
 return (
   <React.Fragment style={{minHeight: window.innerHeight - 120}}>
+
   <Header/>
-            
-      <div className="container">
-        <div className="row">
-          <div className="col s8 offset-s2">
-            <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b>Register</b> below
-              </h4>
-              <p className="grey-text text-darken-1">
+
+        <div className="container">
+            <div className="row">
+              <div className="col-md-6 mt-5 mx-auto">
+                <form noValidate onSubmit={this.onSubmit}>
+                  <h1 className="h3 mb-3 font-weight-normal">Register</h1>
+                  <br></br>
+                  <div className="form-group">
+
+                    <div style={{display:"flex"}}>
+                      <label htmlFor="email" style={{width:"50%"}}>Name:</label>
+                      <span style={{color: "red", width: "50%", fontWeight: "bold", textAlign: "right"}}>
+                        {errors.name}
+                      </span>
+                    </div>
+
+                    <input
+                      onChange={this.onChange}
+                      value={this.state.name}
+                      error={errors.name}
+                      id="name"
+                      type="text"
+                      placeholder = "Name"
+                      className={classnames("form-control", {
+                        invalid: errors.name
+                      })}
+                    />
+
+                  </div>
+                  <div className="form-group">
+                    <div style={{display:"flex"}}>
+                      <label htmlFor="email" style={{width:"50%"}}>Email Address:</label>
+                      <span style={{color: "red", width: "50%", fontWeight: "bold", textAlign: "right"}}>
+                        {errors.email}
+                      </span>
+                    </div>
+
+                    <input
+                      onChange={this.onChange}
+                      value={this.state.email}
+                      error={errors.email}
+                      id="email"
+                      type="email"
+                      placeholder="Email Address"
+                      className={classnames("form-control", {
+                        invalid: errors.email
+                      })}
+                    />
+
+                  </div>
+                  <div className="form-group">
+                    <div style={{display:"flex"}}>
+                      <label htmlFor="email" style={{width:"25%"}}>Password:</label>
+                      <span style={{color: "red", width: "75%", fontWeight: "bold", textAlign: "right"}}>
+                        {errors.password}
+                      </span>
+                    </div>
+
+                    <input
+                      onChange={this.onChange}
+                      value={this.state.password}
+                      error={errors.password}
+                      id="password"
+                      type="password"
+                      placeholder = "Password"
+                      className={classnames("form-control", {
+                        invalid: errors.password
+                      })}
+                    />
+                  </div>
+                  <div className="form-group">
+
+                    <div style={{display:"flex"}}>
+                      <label htmlFor="email" style={{width:"50%"}}>Confirm Password:</label>
+                      <span style={{color: "red", width: "50%", fontWeight: "bold", textAlign: "right"}}>
+                        {errors.password2}
+                      </span>
+                    </div>
+
+                    <input
+                      onChange={this.onChange}
+                      value={this.state.password2}
+                      error={errors.password2}
+                      id="password2"
+                      type="password"
+                      placeholder="Confirm Password"
+                      className={classnames("form-control", {
+                        invalid: errors.password2
+                      })}
+                    />
+                  </div>
+                  <br></br>
+                  <button
+                    type="submit"
+                    className="btn btn-lg btn-primary btn-block"
+                  >
+                    Register
+                  </button>
+                </form>
+                <br></br>
+                <p className="grey-text text-darken-1">
                 Already have an account? <Link to="/login">Log in</Link>
               </p>
+              </div>
             </div>
-            <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.name}
-                  error={errors.name}
-                  id="name"
-                  type="text"
-                  className={classnames("", {
-                    invalid: errors.name
-                  })}
-                />
-                <label htmlFor="name">Name</label>
-                <span className="red-text">{errors.name}</span>
-              </div>
-              <div className="input-field col s12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"
-                  className={classnames("", {
-                    invalid: errors.email
-                  })}
-                />
-                <label htmlFor="email">Email</label>
-                <span className="red-text">{errors.email}</span>
-              </div>
-              <div className="input-field col s12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.password}
-                  error={errors.password}
-                  id="password"
-                  type="password"
-                  className={classnames("", {
-                    invalid: errors.password
-                  })}
-                />
-                <label htmlFor="password">Password</label>
-                <span className="red-text">{errors.password}</span>
-              </div>
-              <div className="input-field col s12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.password2}
-                  error={errors.password2}
-                  id="password2"
-                  type="password"
-                  className={classnames("", {
-                    invalid: errors.password2
-                  })}
-                />
-                <label htmlFor="password2">Confirm Password</label>
-                <span className="red-text">{errors.password2}</span>
-              </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
-                  Sign up
-                </button>
-              </div>
-            </form>
           </div>
-        </div>
-      </div>
+
       </React.Fragment>
     );
   }
