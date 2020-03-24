@@ -98,7 +98,7 @@ class Header extends React.Component {
 
                         <NavDropdown title="Unsecured Methods" id="basic-nav-dropdown">
                             <NavDropdown.Item href="/sql">SQL Injection</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">IDOR/URL</NavDropdown.Item>
+                            <NavDropdown.Item href="/idor">IDOR/URL</NavDropdown.Item>
                             <NavDropdown.Item href="/csrf">CSRF</NavDropdown.Item>
                             <NavDropdown.Item href="/xss">XSS</NavDropdown.Item>
                             {/* <NavDropdown.Divider />

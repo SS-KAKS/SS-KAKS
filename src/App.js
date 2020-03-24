@@ -16,7 +16,7 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Secure_CSRF from "./pages/Secure_CSRF";
-
+import Idor from "./pages/IDOR"
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -55,6 +55,7 @@ class App extends React.Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/idor" component={Idor} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
 
