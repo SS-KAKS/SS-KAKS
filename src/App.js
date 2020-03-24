@@ -17,6 +17,8 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Secure_CSRF from "./pages/Secure_CSRF";
 import Idor from "./pages/IDOR"
+import SecureIdor from "./pages/SecureIDOR"
+
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -57,6 +59,8 @@ class App extends React.Component {
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/idor" component={Idor} />
             <Route exact path="/idor/admin" component={Idor} />
+            <Route exact path="/secure/idor" component={SecureIdor} />
+            <Route exact path="/secure/idor/admin" component={SecureIdor} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
 
