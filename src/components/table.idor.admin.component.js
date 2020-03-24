@@ -21,7 +21,7 @@ const userInfo = props => (
 // )
 class CompleteTable extends Component {
   state = {
-    persons: {}
+    persons: []
   }
   componentDidMount()
   {
@@ -34,6 +34,7 @@ class CompleteTable extends Component {
   }
   render() {
     const { user } = this.props.auth;
+    const { persons } = this.state;
     return (
       <div style={{textAlign: "Center"}}>
         <br></br>
@@ -41,16 +42,13 @@ class CompleteTable extends Component {
         <br/>
         <br/>      
         <br/>
-        <table className="table" style={{width: "90%", marginLeft: "5%"}} >
-          <thead className="thead-dark">
-          <tr>
-            <th>Name</th>
-            <th>CreditCard</th>
-          </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
+        {
+          this.state.persons.map( persons => (
+            <div>
+            <p>Name: {persons.name} - Credit Card Info: {parseInt(persons._id,16)%100000000000000000}</p>
+            </div>
+          ))
+        }
       </div>
     )
   }
