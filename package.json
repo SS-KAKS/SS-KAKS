@@ -53,14 +53,15 @@
     "webpack": "^4.41.2"
   },
   "scripts": {
-    "start": "  npm run dev ",
+    "start": " npm run dev ",
     "reactStr": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "nodemonRnner": "nodemon  cd server/server.js",
+    "mongoServerStart" : "node server/mongoDBConnection/server.js",
     "run-scriptStart": "npm run-script start",
-    "dev": "npm-run-all --parallel   reactStr  nodemonRnner"
+    "dev": "npm-run-all --parallel   reactStr  nodemonRnner mongoServerStart"
   },
   "proxy": "http://localhost:5080",
   "eslintConfig": {
