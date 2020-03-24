@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Connect } from 'aws-sdk';
 //const MyQuery = require("../mongoDBConnection/models/myQuery");
-
+//import User from "../mongoDBConnection/routes/api/users";
 
 class IDOR extends React.Component {
   //user.name is how its refered

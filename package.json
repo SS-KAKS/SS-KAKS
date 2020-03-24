@@ -57,11 +57,10 @@
     "reactStr": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "serverStart": "cd src/mongoDBConnection && npm start",
     "eject": "react-scripts eject",
     "nodemonRnner": "nodemon  cd server/server.js",
     "run-scriptStart": "npm run-script start",
-    "dev": "npm-run-all --parallel   reactStr serverStart  nodemonRnner"
+    "dev": "npm-run-all --parallel   reactStr  nodemonRnner"
   },
   "proxy": "http://localhost:5080",
   "eslintConfig": {

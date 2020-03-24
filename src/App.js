@@ -56,6 +56,7 @@ class App extends React.Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/idor" component={Idor} />
+            <Route exact path="/idor/admin" component={Idor} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
 

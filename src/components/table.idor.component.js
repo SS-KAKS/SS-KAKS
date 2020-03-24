@@ -3,38 +3,43 @@ import axios from 'axios';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-const ccInfo = props => (
-  <tr>
-    <td>{props.ccnum.id}</td>
-  </tr>
-)
-
 
 
 class IdorTable extends Component {
-render() {
-  const { user } = this.props.auth;
-  return (
-    <div style={{textAlign: "Center"}}>
-      <br></br>
-      <h1>Your Info</h1>
-      <br/>
-      <br/>      
-      <br/>
-      <table className="table" style={{width: "90%", marginLeft: "5%"}} >
-        <thead className="thead-dark">
-          <tr>
-            <th>Credit Card Num</th>
-          </tr>
-        </thead>
-        <tbody>
-          {user.cc}
-        </tbody>
-      </table>
-
-    </div>
-  )
-}
+  state = {
+    person: {}
+  }
+  componentDidMount()
+  {
+    axios.get(`http://localhost:5080/api/users/${this.props.auth.user.id}`).then( res =>{
+      const person = res.data;
+      console.log(res.data);
+      this.setState({person});
+    }
+    )
+  }
+  render() {
+    const { user } = this.props.auth;
+    return (
+      <div style={{textAlign: "Center"}}>
+        <br></br>
+        <h1>Your Info</h1>
+        <br/>
+        <br/>      
+        <br/>
+        <table className="table" style={{width: "90%", marginLeft: "5%"}} >
+          <thead className="thead-dark">
+            <tr>
+              <th>Credit Card Num</th>
+            </tr>
+          </thead>
+          <tbody>
+            {parseInt(this.state.person._id,16)%100000000000000000}
+          </tbody>
+        </table>
+      </div>
+    )
+  }
 }
 const mapStateToProps = state => ({
   auth: state.auth
