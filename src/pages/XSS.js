@@ -1,95 +1,75 @@
-import React from 'react';
 import Header from '../components/Header';
 import { BrowserRouter as Router} from "react-router-dom";
-
-
+import React from "react";
+import queryString from "query-string";
+//import clipboardCopy from "clipboard-copy";
 
 class XSS extends React.Component {
-
   constructor(props) {
     super(props);
 
-    this.onSubmit = this.onSubmit.bind(this);
+    const parsedURL = queryString.parse(window.location.search);
+    let defaultImg = "";
 
-    this.state = {item: '', submit: 0};
-  }
-
-  onSubmit(i) {
-    this.setState({submit: 1});
-    i.preventDefault();
-    let token = this.refs.csrf.value;
-    console.log(token);
-    
-
-    // if (token === "admin") {
-    //   alert("Congrats, now try the secure challenge");
-    //   window.location = '/xss';
-    // }
-    // else {
-    //   console.log(token);
-    //   alert("Not Admin!");
-    //   window.location = '/xss';
-    // }
-  }
-
-  myChangeHandler = (event) => {
-    this.setState({item: event.target.value});
-  }
-
-
-    render() {
-        
-        //let props = {};
-        //props[userProvidedData] = "hello";
-
-        //let element = <div {...props} />;
-        //let html = renderToString(element);
-
-        let text = <button>Submit</button>;
-        let items = '';
-        if (this.state.submit) {
-            items = <h1>Hello {this.state.item}</h1>;
-        } else {
-            items = '';
+    if (parsedURL["img"]) {
+      defaultImg = parsedURL["img"];
     }
 
-        return (
-          <Router>
-            <Header />
+    this.state = { value: defaultImg };
 
+    this.handleChange = this.handleChange.bind(this);
+    this.handleShare = this.handleShare.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleShare(event) {
+    // Update the URL
+    const searchValue = { img: this.state.value };
+    const parsedSearchValue = queryString.stringify(searchValue);
+    window.location.search = parsedSearchValue;
+
+    // // Copy to the clipboard
+    // const URL = `${window.location.origin}${
+    //   window.location.pathname
+    // }?${parsedSearchValue}`;
+    // clipboardCopy(URL);
+  }
+
+  render() {
+    return (
+        <Router>
+        <Header />
+        <div id="main-content"  style={{textAlign: "center"}}>
             <br></br>
-            <div id="main-content"  style={{textAlign: "center"}}>
-              <h1>XSS</h1>
+            <h1>Share your favorite image</h1>
+            <br></br>
+            <input style={{width:"50%"}}
+            placeholder="Paste your favorite image URL, like https://placeimg.com/320/320/any"
+            value={this.state.value}
+            onChange={this.handleChange}
+            />
+            <br></br>
+            <div
+            dangerouslySetInnerHTML={{
+                __html: `<img src="${this.state.value}"/>`
+            }}
+            />
+            <br></br>
+            <button onClick={this.handleShare}>Share</button>
+        </div>
 
-              
-
-              
-              <form onSubmit={this.onSubmit}>
-
-                Make your post in the blog! {items} 
-                <br></br>
-                <br/>
-                <input ref = "csrf" name="csrf_token" type="text" onChange={this.myChangeHandler} />
-                <br/>
-                <br></br>
-                <input type="submit" value="Update"/>
-              </form>
-
-                <br></br>
-                {this.props.passed}
-                <p>{text}</p>
-                <script>
-                    {text}
-                </script>
-
-            </div>
-
-            
-          </Router>
-        )
-    }
+        </Router>
+    );
+  }
 }
 
 export default XSS;
+
+
+
+
 
 
