@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../components/Header';
 import { connect } from "react-redux";
 import { BrowserRouter as Router} from "react-router-dom";
-import objectHash from "object-hash";
 
 
 class Secure_CSRF extends React.Component {
@@ -35,7 +34,7 @@ class Secure_CSRF extends React.Component {
 
 
     render() {
-      const { user } = this.props.auth;
+      //const { user } = this.props.auth;
       
         return (
           <Router>

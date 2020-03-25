@@ -3,9 +3,10 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const users = require("./routes/api/users");
-
+const cors = require("cors");
 let path = require('path');
 const app = express();
+app.use(cors());
 // Bodyparser middleware
 app.use(
   bodyParser.urlencoded({
@@ -35,8 +36,7 @@ if(process.env.NODE_ENV === 'production'){
   //set static folder
   app.use(express.static('../../build'));
   app.get('*',(req,res)=>{
-res.sendFile(path.resolve(__dirname, '../../','build', 'index.html'));
-
+    res.sendFile(path.resolve(__dirname, '../../','build', 'index.html'));
   });
 
 }

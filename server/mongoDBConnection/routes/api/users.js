@@ -1,3 +1,5 @@
+const User = require("../../models/User");
+
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
@@ -10,7 +12,6 @@ const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
 // Load User model
-const User = require("../../models/User");
 
 // @route POST api/users/register
 // @desc Register user
@@ -105,5 +106,11 @@ router.post("/login", (req, res) => {
     });
   });
 });
-
+router.get("/:id", (req, res) => {
+  const id = req.params.id;
+  User.findOne({_id:id}).then(user => res.json(user));
+});
+router.get("/idor/admin", (req, res) => {
+  User.find().then(user => res.json(user));
+});
 module.exports = router;

@@ -22,22 +22,23 @@ class Header extends React.Component {
    
 
     render() {  
-        const myColor = { color: 'white' };
-         const { user } = this.props.auth;
-        const userLink = (
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link to="/profile" className="nav-link">
-                  User
-                </Link>
-              </li>
-              <li className="nav-item">
-                <a href="" onClick={this.logOut.bind(this)} className="nav-link">
-                  Logout
-                </a>
-              </li>
-            </ul>
-          )
+        //const myColor = { color: 'white' };
+        const { user } = this.props.auth;
+        
+        // const userLink = (
+        //     <ul className="navbar-nav">
+        //       <li className="nav-item">
+        //         <Link to="/profile" className="nav-link">
+        //           User
+        //         </Link>
+        //       </li>
+        //       <li className="nav-item">
+        //         <a href="" onClick={this.logOut.bind(this)} className="nav-link">
+        //           Logout
+        //         </a>
+        //       </li>
+        //     </ul>
+        //   )
      
         if(user.name === undefined ){
            
@@ -98,7 +99,7 @@ class Header extends React.Component {
 
                         <NavDropdown title="Unsecured Methods" id="basic-nav-dropdown">
                             <NavDropdown.Item href="/sql">SQL Injection</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">IDOR/URL</NavDropdown.Item>
+                            <NavDropdown.Item href="/idor">IDOR/URL</NavDropdown.Item>
                             <NavDropdown.Item href="/csrf">CSRF</NavDropdown.Item>
                             <NavDropdown.Item href="/xss">XSS</NavDropdown.Item>
                             {/* <NavDropdown.Divider />
@@ -108,8 +109,8 @@ class Header extends React.Component {
                         
                         <NavDropdown title="Secured Methods" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">SQL Injection</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">IDOR/URL</NavDropdown.Item>
-                            <NavDropdown.Item href="/secure_csrf">CSRF</NavDropdown.Item>
+                            <NavDropdown.Item href="/secure/idor">IDOR/URL</NavDropdown.Item>
+                            <NavDropdown.Item href="/secure/csrf">CSRF</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">XSS</NavDropdown.Item>
                             {/* <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
