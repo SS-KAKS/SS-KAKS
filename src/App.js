@@ -17,6 +17,7 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Secure_CSRF from "./pages/Secure_CSRF";
 import XSS from "./pages/XSS";
+import SecureXSS from "./pages/SecureXSS";
 import Idor from "./pages/IDOR"
 import SecureIdor from "./pages/SecureIDOR"
 
@@ -53,6 +54,7 @@ class App extends React.Component {
             <Route exact path='/' component={LandingPage} />
             <Route exact path ='/csrf' component = {CSRF}/>
             <Route exact path ='/secure/csrf' component = {Secure_CSRF}/>
+            <Route exact path = '/secure/xss' component = {SecureXSS} />
             <Route exact path='/sql' component={SQL} />
             <Route exact path='/sql/:search' component={Search}/>
             <Route exact path="/login" component={Login} />
