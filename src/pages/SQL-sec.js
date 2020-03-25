@@ -2,11 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Route} from "react-router-dom";
 import { connect } from "react-redux";
 import Header from '../components/Header';
-import Table from '../components/table.component';
+import Table from '../components/table-sec.component';
+import Search from '../components/search-sec.component';
+//import Table2 from '../components/table-sec.component';
 import { Link } from "react-router-dom";
 
 
-class SQL extends React.Component {
+class SQLsec extends React.Component {
 
 
     render() {
@@ -38,7 +40,7 @@ class SQL extends React.Component {
 
         </div>
       </div>
-    </div>>
+    </div>
 
 
           </React.Fragment>
@@ -48,7 +50,7 @@ class SQL extends React.Component {
       }else{
         return (
           <Router>
-              <div className="Sql">
+              <div className="Sql-sec">
                 <Header />
                 <Route exact path="" component={Table} />
               </div>
@@ -63,6 +65,5 @@ const mapStateToProps = state => ({
 }
 );
 export default connect(
-  mapStateToProps,
-  {}
-)(SQL);
+  mapStateToProps
+)(SQLsec);
