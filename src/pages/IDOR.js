@@ -5,7 +5,6 @@ import CompleteTable from '../components/table.idor.admin.component';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import { connect } from "react-redux";
 
-
 class IDOR extends React.Component {
   //user.name is how its refered
     render() {

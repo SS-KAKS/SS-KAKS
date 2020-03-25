@@ -32,8 +32,8 @@ class CompleteTable extends Component {
     )
   }
   render() {
-
     return (
+      
       <div style={{textAlign: "Center"}}>
         <br></br>
         <h1>All Info</h1>
