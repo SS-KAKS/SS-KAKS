@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 
@@ -19,7 +18,7 @@ class IdorTable extends Component {
     )
   }
   render() {
-    const { user } = this.props.auth;
+    //const { user } = this.props.auth;
     return (
       <div style={{textAlign: "Center"}}>
         <br></br>

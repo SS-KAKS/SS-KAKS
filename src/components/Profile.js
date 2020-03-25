@@ -15,7 +15,7 @@ class Profile extends Component {
   componentDidMount() {
     const token = localStorage.usertoken
     try{
-      const decoded = jwt_decode(token)
+      //const decoded = jwt_decode(token)
     }catch(error){
       console.log('invalid token format', error);
       return true;

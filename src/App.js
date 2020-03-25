@@ -51,7 +51,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' component={LandingPage} />
             <Route exact path ='/csrf' component = {CSRF}/>
-            <Route exact path ='/secure_csrf' component = {Secure_CSRF}/>
+            <Route exact path ='/secure/csrf' component = {Secure_CSRF}/>
             <Route exact path='/sql' component={SQL} />
             <Route exact path='/sql/:search' component={Search}/>
             <Route exact path="/login" component={Login} />

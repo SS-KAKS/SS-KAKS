@@ -3,11 +3,7 @@ import Header from '../components/Header';
 import IdorTable from '../components/table.idor.component';
 import CompleteTable from '../components/table.idor.admin.component';
 import {BrowserRouter as Router, Route} from "react-router-dom";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Connect } from 'aws-sdk';
-//const MyQuery = require("../mongoDBConnection/models/myQuery");
-//import User from "../mongoDBConnection/routes/api/users";
 
 class SecureIDOR extends React.Component {
   //user.name is how its refered

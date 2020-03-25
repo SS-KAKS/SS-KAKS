@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-const userInfo = props => (
-  <tr>
-    <td>{props.persons._id}</td>
-    <td>{props.persons.name}</td>
-  </tr>
-)
+// const userInfo = props => (
+//   <tr>
+//     <td>{props.persons._id}</td>
+//     <td>{props.persons.name}</td>
+//   </tr>
+// )
 // userInfo.map(user => 
 //   <tr>
 //     <td>
@@ -33,8 +32,7 @@ class CompleteTable extends Component {
     )
   }
   render() {
-    const { user } = this.props.auth;
-    const { persons } = this.state;
+
     return (
       <div style={{textAlign: "Center"}}>
         <br></br>
