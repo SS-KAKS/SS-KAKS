@@ -4,6 +4,8 @@ import IdorTable from '../components/table.idor.component';
 import CompleteTable from '../components/table.idor.admin.component';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import { connect } from "react-redux";
+//const MyQuery = require("../mongoDBConnection/models/myQuery");
+//import User from "../mongoDBConnection/routes/api/users";
 
 class IDOR extends React.Component {
   //user.name is how its refered

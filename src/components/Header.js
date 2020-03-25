@@ -3,9 +3,9 @@ import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import { logoutUser } from  "../actions/authActions";
 import { connect } from "react-redux";
 import { Link, withRouter } from 'react-router-dom'
- 
+
 class Header extends React.Component {
-  
+
     updateState(event){
 
     }
@@ -27,7 +27,7 @@ class Header extends React.Component {
 
      
         if(user.name === undefined ){
-           
+
             return (
                 <React.Fragment>
                     <Navbar bg="dark" expand="lg" variant="dark">
@@ -35,11 +35,11 @@ class Header extends React.Component {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="mr-auto">
-                        
-    
+
+
 
                             </Nav>
-                           
+
 
                             <nav>
                                                 <ul className="navbar-nav">
@@ -59,11 +59,11 @@ class Header extends React.Component {
                                 </li>
                             </ul>
                             </nav>
-                
-                        
+
+
                         </Navbar.Collapse>
                         </Navbar>
-    
+
                 </React.Fragment>
             )
 
@@ -87,9 +87,9 @@ class Header extends React.Component {
                             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
                         </NavDropdown>
 
-                        
+
                         <NavDropdown title="Secured Methods" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/secure/sql">SQL Injection</NavDropdown.Item>
+                            <NavDropdown.Item href="/sql-sec">SQL Injection</NavDropdown.Item>
                             <NavDropdown.Item href="/secure/idor">IDOR/URL</NavDropdown.Item>
                             <NavDropdown.Item href="/secure/csrf">CSRF</NavDropdown.Item>
                             <NavDropdown.Item href="/secure/xss">XSS</NavDropdown.Item>
@@ -98,9 +98,9 @@ class Header extends React.Component {
                         </NavDropdown>
 
                         </Nav>
-                       
 
-                     
+
+
                        {/* <h2 style={ myColor }>  {user.name}   </h2> */}
              <button
               style={{
@@ -122,8 +122,8 @@ class Header extends React.Component {
     }
     }
 }
- 
- 
+
+
   const mapStateToProps = state => ({
     auth: state.auth,
     name: state.name

@@ -32,6 +32,8 @@ class CompleteTable extends Component {
     )
   }
   render() {
+    // const { user } = this.props.auth;
+    // const { persons } = this.state;
     return (
       
       <div style={{textAlign: "Center"}}>

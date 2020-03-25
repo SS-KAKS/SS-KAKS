@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 import Header from '../components/Header';
+import axios from 'axios';
+
 const Songs = props => (
   <tr>
     <td>{props.music.id}</td>
@@ -13,7 +14,7 @@ const Songs = props => (
 
 
 
-export default class Search extends Component {
+export default class Look extends Component {
   constructor(props) {
     super(props);
 
@@ -24,7 +25,7 @@ export default class Search extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/tables/get/' + this.props.match.params.search)
+    axios.get('http://localhost:5000/tables/get/sec/' + this.props.match.params.search)
       .then(response => {
         this.setState({music: response.data})
         console.log(this.state.music)
@@ -51,9 +52,14 @@ export default class Search extends Component {
   }
 
 list() {
-  return this.state.music.map(currentT => {
-    return <Songs music={currentT} key={currentT.id}/>;
-  })
+  if (this.state.music.length === 0) {
+    return ("No results")
+  }
+  else {
+    return this.state.music.map(currentT => {
+      return <Songs music={currentT} key={currentT.id}/>;
+    })
+  }
 }
 
 render() {

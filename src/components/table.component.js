@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-
 const Music = props => (
   <tr>
     <td>{props.music.id}</td>
@@ -25,7 +24,7 @@ export default class Table extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/tables/get')
+    axios.get('http://localhost:5000/tables/get')
       .then(response => {
         this.setState({music: response.data})
         //console.log(this.state.music)
@@ -69,15 +68,15 @@ render() {
             value={this.state.search}
             onChange={this.onChangeSearch}
             />
-            
+
             <input type="submit" value="Search" className="btn btn-primary" style={{marginLeft: "1%"}}/>
         </div>
         <div className="form-group">
-          
+
         </div>
       </form>
       <br></br>
-      
+
 
       <table className="table" style={{width: "90%", marginLeft: "5%"}} >
         <thead className="thead-dark">
