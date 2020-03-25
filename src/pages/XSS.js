@@ -38,8 +38,14 @@ class XSS extends React.Component {
 
 
     render() {
+        
+        let props = {};
+        //props[userProvidedData] = "hello";
 
-        var text = "Something";
+        let element = <div {...props} />;
+        //let html = renderToString(element);
+
+        let text = <button>Submit</button>;
         let items = '';
         if (this.state.submit) {
             items = <h1>Hello {this.state.item}</h1>;
@@ -72,6 +78,9 @@ class XSS extends React.Component {
                 <br></br>
                 {this.props.passed}
                 <p>{text}</p>
+                <script>
+                    {text}
+                </script>
 
             </div>
 
