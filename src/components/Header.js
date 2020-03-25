@@ -22,23 +22,9 @@ class Header extends React.Component {
    
 
     render() {  
-        //const myColor = { color: 'white' };
-        const { user } = this.props.auth;
         
-        // const userLink = (
-        //     <ul className="navbar-nav">
-        //       <li className="nav-item">
-        //         <Link to="/profile" className="nav-link">
-        //           User
-        //         </Link>
-        //       </li>
-        //       <li className="nav-item">
-        //         <a href="" onClick={this.logOut.bind(this)} className="nav-link">
-        //           Logout
-        //         </a>
-        //       </li>
-        //     </ul>
-        //   )
+        const { user } = this.props.auth;
+
      
         if(user.name === undefined ){
            
