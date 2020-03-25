@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import { connect } from "react-redux";
 import Header from '../components/Header';
 import Table from '../components/table-sec.component';
-import Search from '../components/search-sec.component';
 //import Table2 from '../components/table-sec.component';
 import { Link } from "react-router-dom";
 
