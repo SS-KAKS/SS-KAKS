@@ -39,10 +39,10 @@ class XSS extends React.Component {
 
     render() {
         
-        let props = {};
+        //let props = {};
         //props[userProvidedData] = "hello";
 
-        let element = <div {...props} />;
+        //let element = <div {...props} />;
         //let html = renderToString(element);
 
         let text = <button>Submit</button>;
