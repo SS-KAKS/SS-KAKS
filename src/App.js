@@ -43,7 +43,7 @@ if (localStorage.jwtToken) {
   }
 }
 class App extends React.Component {
-  componentWillMount(){
+  componentDidMount(){
     document.title = 'SS-KAKS'
   }
 
