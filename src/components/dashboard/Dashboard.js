@@ -23,13 +23,10 @@ return (
         <div className="row">
           <div className="col s12 center-align">
             <h4 style={{marginTop: "5%"}}>
-              <t>Hey there,</t> {user.name.split(" ")[0]}
+              <t>Hey there,</t> 
+              <t style={{fontWeight:"Bold"}}> { user.name.split(" ")[0] }</t>
               <p className="flow-text grey-text text-darken-1">
-                Please look around, and try different attacks
-                <t style={{fontWeight:"Bold"}}> { user.name.split(" ")[0] }</t>
-                .
-                 
-              
+                Please look around, and try different attacks.           
             
               </p>
             </h4>

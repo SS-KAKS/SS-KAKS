@@ -1,72 +1,69 @@
 const express = require('express');
 const router = express.Router();
-const sqlite3 = require('sqlite3').verbose();
+const sqlite3 = require('sqlite3').verbose()
+const { Client } = require('pg');
+var connectionString = "postgres://ozxkmjdwprklnr:aaa0d97cc0f2c05a34df2d17d6764b7fd62342733afb3ac0ede4521e01d791a4@ec2-18-213-176-229.compute-1.amazonaws.com:5432/d15dr5jdgkeeub"
+const DATABASE_URL = "ec2-18-213-176-229.compute-1.amazonaws.com";
 
-let db = new sqlite3.Database('./music.db', sqlite3.OPEN_READWRITE,(err) => {
+/*let db = new sqlite3.Database('./music.db', sqlite3.OPEN_READWRITE,(err) => {
   if (err) {
     console.error(err.message);
   }
   else {
     console.log('Connected');
   }
+})*/
+
+const client = new Client({
+  connectionString: connectionString,
+  ssl: true,
 })
+
+client.connect()
+  .then(() => console.log("it be working my dude"))
+  .catch(e => console.log(e))
+
 
 router.route('/get').get((req, res) => {
 
-  db.all('SELECT * FROM music', (err, row) => {
+  client.query('SELECT * FROM music;', (err, rows) => {
     if (err) {
       console.error(err.message);
     }
-    res.json(row);
+    res.json(rows.rows);
   });
 })
 
 router.route('/get/:search').get((req,res) => {
 
-  db.all('SELECT * FROM music WHERE track LIKE \'%' + req.params.search + '%\';', (err, row) => {
+  client.query('SELECT * FROM music WHERE track LIKE \'%' + req.params.search + '%\';', (err, rows) => {
     if (err) {
       console.error(err.message);
     }
-    res.json(row);
+    res.json(rows.rows);
   });
 })
-// 'SELECT * FROM (SELECT * FROM SIGHTINGS WHERE name = ${temp} ORDER BY sighted DESC LIMIT 10)'
-/*router.route('/get/:comname').get((req, res) => {
-  var temp = req.params.comname;
-  temp = temp.replace(/%20/g, " ");
-  var text = "SELECT * FROM (SELECT * FROM SIGHTINGS WHERE name = '" + temp + "' ORDER BY sighted DESC LIMIT 10)";
-  db.all(text, (err, row) => {
+
+router.route('/get/sec/:search').get((req,res) => {
+
+  var input = req.params.search;
+  var quote = input.replace(/[^\']/g, '');
+  input = input.replace(/[&\/\\#,+$~%":*?<>{}]/g, '');
+  input = input.replace(/\-/g, '');
+  if (quote.length >= 2) {
+    input = input.replace(/\'/g, '');
+  }
+  else if (quote.length === 1) {
+    input = input.replace(/\'/g, '\'\'');
+  }
+  input = input.substring(0, 15);
+
+  client.query('SELECT * FROM music WHERE track LIKE \'%' + input + '%\';', (err, row) => {
     if (err) {
       console.error(err.message);
     }
-    res.json(row);
-  })
-})
+    res.json(row.rows);
+  });
+});
 
-router.route('/insert').post((req, res) => {
-  const flower = req.body.flower;
-  const name = req.body.name;
-  const location = req.body.location;
-  const sighted = req.body.sighted;
-  var text = "INSERT INTO SIGHTINGS VALUES('" +flower+"', '"+name+"', '"+location+"', '"+sighted+"');"
-  db.run(text)
-  res.json(text)
-})
-
-router.route('/update/:comname').post((req, res) => {
-  const name = req.body.name;
-  const old = req.params.comname;
-  var text = "UPDATE SIGHTINGS set name = '"+name+"' WHERE name = '"+old+"'"
-  var other = "UPDATE FLOWERS set comname = '"+name+"' WHERE comname = '"+old+"'"
-  db.run(text)
-  db.run(other)
-  res.json(text)
-})*/
-
-/*db.close((err) => {
-  if (err) {
-    console.error(err.message);
-  }
-  console.log('Close the database connection.');
-});*/
 module.exports = router;

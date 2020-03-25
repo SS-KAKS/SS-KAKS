@@ -1,9 +1,12 @@
 import React from 'react';
 import LandingPage from './pages/LandingPage';
 import SQL from './pages/SQL';
+import SQLsec from './pages/SQL-sec';
+import CSRF from "./pages/CSRF";
 import { observer } from 'mobx-react';
 import { Provider } from "react-redux";
-import Search from "./components/search.component"
+import Search from "./components/search.component";
+import Look from "./components/search-sec.component";
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import store from "./store";
@@ -14,6 +17,9 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+import Secure_CSRF from "./pages/Secure_CSRF";
+import Idor from "./pages/IDOR"
+import SecureIdor from "./pages/SecureIDOR"
 
 
 // Check for token to keep user logged in
@@ -46,18 +52,21 @@ class App extends React.Component {
 
           <Switch>
             <Route exact path='/' component={LandingPage} />
-      
+            <Route exact path ='/csrf' component = {CSRF}/>
+            <Route exact path ='/secure/csrf' component = {Secure_CSRF}/>
             <Route exact path='/sql' component={SQL} />
             <Route exact path='/sql/:search' component={Search}/>
+            <Route exact path='/sql-sec' component={SQLsec}/>
+            <Route exact path='/sql-sec/:search' component={Look}/>
             <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/profile" component={Profile} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/profile" component={Profile} />
+            <Route exact path="/idor" component={Idor} />
+            <Route exact path="/idor/admin" component={Idor} />
+            <Route exact path="/secure/idor" component={SecureIdor} />
+            <Route exact path="/secure/idor/admin" component={SecureIdor} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
-            {/* <Route exact path='/IDOR_URL' component={Admin} />
-            <Route exact path='/admin/shop' component={ShopAdmin} />
-            <Route exact path='/admin/testimonials' component={TestimonialsAdmin} />
-            <Route component={NotFound} /> */}
 
           </Switch>
         </Router>

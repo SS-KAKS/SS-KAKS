@@ -15,7 +15,7 @@ class Profile extends Component {
   componentDidMount() {
     const token = localStorage.usertoken
     try{
-      const decoded = jwt_decode(token)
+      //const decoded = jwt_decode(token)
     }catch(error){
       console.log('invalid token format', error);
       return true;
@@ -39,7 +39,7 @@ class Profile extends Component {
           <table className="table col-md-6 mx-auto">
             <tbody>
               <tr>
-                <td>Fist Name</td>
+                <td>First Name</td>
                 <td>{this.state.first_name}</td>
               </tr>
               <tr>
