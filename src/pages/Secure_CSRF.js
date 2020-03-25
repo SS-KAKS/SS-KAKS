@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import { connect } from "react-redux";
 import { BrowserRouter as Router} from "react-router-dom";
+//import objectHash from "object-hash";
 
 
 class Secure_CSRF extends React.Component {

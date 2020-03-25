@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-
 const Music = props => (
   <tr>
     <td>{props.music.id}</td>

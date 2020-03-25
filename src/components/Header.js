@@ -18,13 +18,12 @@ class Header extends React.Component {
         localStorage.removeItem('usertoken')
         this.props.history.push(`/`)
       }
+      
+   
 
-
-
-    render() {
+    render() {  
         //const myColor = { color: 'white' };
-        const { user } = this.props.auth;
-
+         const { user } = this.props.auth;
         // const userLink = (
         //     <ul className="navbar-nav">
         //       <li className="nav-item">
@@ -39,7 +38,7 @@ class Header extends React.Component {
         //       </li>
         //     </ul>
         //   )
-
+     
         if(user.name === undefined ){
 
             return (
