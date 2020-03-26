@@ -33,7 +33,8 @@ class IdorTable extends Component {
             </tr>
           </thead>
           <tbody>
-            {parseInt(this.state.person._id,16)%100000000000000000}
+            <br></br>
+            {parseInt(this.props.auth.user.id,16)%100000000000000000}
           </tbody>
         </table>
       </div>
