@@ -24,7 +24,7 @@ class CompleteTable extends Component {
   }
   componentDidMount()
   {
-    axios.get(`http://localhost:5080/api/users/idor/admin`).then( res =>{
+    axios.get(`/api/users/idor/admin`).then( res =>{
       const persons = res.data;
       console.log(res.data);
       this.setState({persons});
