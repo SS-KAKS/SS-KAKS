@@ -22,22 +22,9 @@ class Header extends React.Component {
    
 
     render() {  
-        //const myColor = { color: 'white' };
-         const { user } = this.props.auth;
-        // const userLink = (
-        //     <ul className="navbar-nav">
-        //       <li className="nav-item">
-        //         <Link to="/profile" className="nav-link">
-        //           User
-        //         </Link>
-        //       </li>
-        //       <li className="nav-item">
-        //         <a href="" onClick={this.logOut.bind(this)} className="nav-link">
-        //           Logout
-        //         </a>
-        //       </li>
-        //     </ul>
-        //   )
+        
+        const { user } = this.props.auth;
+
      
         if(user.name === undefined ){
 
@@ -89,12 +76,7 @@ class Header extends React.Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                        {/* <Nav.Link href="#home">Home</Nav.Link> */}
-                        {/* <Nav.Link href="sql">SQL Injection</Nav.Link>
-                        <Nav.Link href="#link">IDOR/URL</Nav.Link>
-                        <Nav.Link href="#link">CSRF</Nav.Link>
-                        <Nav.Link href="#link">XSS</Nav.Link> */}
-
+                       
 
                         <NavDropdown title="Unsecured Methods" id="basic-nav-dropdown">
                             <NavDropdown.Item href="/sql">SQL Injection</NavDropdown.Item>
@@ -110,7 +92,7 @@ class Header extends React.Component {
                             <NavDropdown.Item href="/sql-sec">SQL Injection</NavDropdown.Item>
                             <NavDropdown.Item href="/secure/idor">IDOR/URL</NavDropdown.Item>
                             <NavDropdown.Item href="/secure/csrf">CSRF</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">XSS</NavDropdown.Item>
+                            <NavDropdown.Item href="/secure/xss">XSS</NavDropdown.Item>
                             {/* <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
                         </NavDropdown>

@@ -18,6 +18,8 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import Secure_CSRF from "./pages/Secure_CSRF";
+import XSS from "./pages/XSS";
+import SecureXSS from "./pages/SecureXSS";
 import Idor from "./pages/IDOR"
 import SecureIdor from "./pages/SecureIDOR"
 
@@ -41,7 +43,7 @@ if (localStorage.jwtToken) {
   }
 }
 class App extends React.Component {
-  componentWillMount(){
+  componentDidMount(){
     document.title = 'SS-KAKS'
   }
 
@@ -54,11 +56,13 @@ class App extends React.Component {
             <Route exact path='/' component={LandingPage} />
             <Route exact path ='/csrf' component = {CSRF}/>
             <Route exact path ='/secure/csrf' component = {Secure_CSRF}/>
+            <Route exact path = '/secure/xss' component = {SecureXSS} />
             <Route exact path='/sql' component={SQL} />
             <Route exact path='/sql/:search' component={Search}/>
             <Route exact path='/sql-sec' component={SQLsec}/>
             <Route exact path='/sql-sec/:search' component={Look}/>
             <Route exact path="/login" component={Login} />
+            <Route exact path="/xss" component={XSS} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/idor" component={Idor} />

@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../components/Header';
 import { connect } from "react-redux";
 import { BrowserRouter as Router} from "react-router-dom";
-//import objectHash from "object-hash";
 
 
 class Secure_CSRF extends React.Component {
@@ -16,9 +15,7 @@ class Secure_CSRF extends React.Component {
   }
 
   onSubmit(i) {
-    const { user } = this.props.auth;
-    
-    console.log(this.props.auth.user.id);
+
     i.preventDefault();
     let token = this.refs.csrf.value;
     if (token === this.props.auth.user.id) {
@@ -26,7 +23,6 @@ class Secure_CSRF extends React.Component {
       window.location = '/secure_csrf';
     }
     else {
-      console.log(user.name);
       alert("Not Logged in!");
       window.location = '/login';
     }

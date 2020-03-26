@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 class IDOR extends React.Component {
   //user.name is how its refered
     render() {
-        //const { user } = this.props.auth;
+        
         // var userName = user.name;
         // var cc = User.findOne({ userName });
         // console.log(cc);
