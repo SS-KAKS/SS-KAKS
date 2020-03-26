@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+const routing = require("./routing");
 const users = require("./routes/api/users");
 const cors = require("cors");
 let path = require('path');
@@ -31,6 +32,7 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
+app.use('/tables', routing);
 //serve static assets if in production
 if(process.env.NODE_ENV === 'production'){
   //set static folder
