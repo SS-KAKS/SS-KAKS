@@ -12,13 +12,6 @@ class SecureIDOR extends React.Component {
         // var userName = user.name;
         // var cc = User.findOne({ userName });
         // console.log(cc);
-        try{ 
-          console.log(this.props);
-        }
-        catch(g)
-        {
-
-        }
         return (
           <Router>
             <Header />

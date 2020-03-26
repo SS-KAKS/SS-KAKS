@@ -24,9 +24,8 @@ class CompleteTable extends Component {
   }
   componentDidMount()
   {
-    axios.get(`/api/users/idor/admin`).then( res =>{
+    axios.get(`http://localhost:5080/api/users/idor/admin`).then( res =>{
       const persons = res.data;
-      console.log(res.data);
       this.setState({persons});
     }
     )
@@ -45,7 +44,6 @@ class CompleteTable extends Component {
         {
           this.state.persons.map( persons => (
             <div>
-              {console.log(this.props.auth.user.name)}
             <p>Name: {persons.name} - Credit Card Info: {parseInt(persons._id,16)%100000000000000000}</p>
             </div>
           ))
