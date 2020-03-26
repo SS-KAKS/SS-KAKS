@@ -12,7 +12,6 @@ class IdorTable extends Component {
   {
     axios.get(`/api/users/${this.props.auth.user.id}`).then( res =>{
       const person = res.data;
-      console.log(res.data);
       this.setState({person});
     }
     )

@@ -17,13 +17,13 @@ class CSRF extends React.Component {
   onSubmit(i) {
     i.preventDefault();
     let token = this.refs.csrf.value;
-    console.log(token);
+
     if (token === "admin") {
       alert("Congrats, now try the secure challenge");
       window.location = '/csrf';
     }
     else {
-      console.log(token);
+
       alert("Not Admin!");
       window.location = '/csrf';
       //window.location = '/sql/' + this.state.search;

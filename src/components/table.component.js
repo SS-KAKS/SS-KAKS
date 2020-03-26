@@ -27,7 +27,7 @@ export default class Table extends Component {
     axios.get('/tables/get')
       .then(response => {
         this.setState({music: response.data})
-        //console.log(this.state.music)
+
       })
       .catch((error) => {
         console.log(error);

@@ -17,7 +17,7 @@ class Profile extends Component {
     try{
       //const decoded = jwt_decode(token)
     }catch(error){
-      console.log('invalid token format', error);
+
       return true;
     }
     const decoded = jwt_decode(token)

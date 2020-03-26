@@ -28,7 +28,7 @@ export default class Look extends Component {
     axios.get('/tables/get/sec/' + this.props.match.params.search)
       .then(response => {
         this.setState({music: response.data})
-        console.log(this.state.music)
+
       })
       .catch((error) => {
         console.log(error);
