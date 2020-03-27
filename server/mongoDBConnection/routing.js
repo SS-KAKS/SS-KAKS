@@ -40,7 +40,9 @@ router.route('/get/:search').get((req,res) => {
     if (err) {
       console.error(err.message);
     }
+    else {
     res.json(rows.rows);
+    }
   });
 })
 
