@@ -20,7 +20,7 @@ class Secure_CSRF extends React.Component {
     let token = this.refs.csrf.value;
     if (token === this.props.auth.user.id) {
       alert("Successfully authorized");
-      window.location = '/secure_csrf';
+      window.location = '/secure/csrf';
     }
     else {
       alert("Not Logged in!");
